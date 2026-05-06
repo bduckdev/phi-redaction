@@ -1,27 +1,21 @@
 # Project phi-redactor
 
-Performant PHI redaction in Go.
+Performant PHI redaction in Go designed to avoid unnecessary language model use.
 
 ## Mental Model
 
 1. lexer emits tokens
-2. detectors identify candidates
-3. resolver handles conflicts between candidates (deciding if "will" is a name or not, etc.)
+2. detectors identify candidates for names or other amiguous things, and findings for finding items that can be identified easily via regex, such as phone numbers, email addresses, etc.). Name detector works via aho-corasick over a list of names from ssa and census bureau, but for now, is only using names that commonly double as verbs.
+3. resolver handles conflicts between candidates. For example, deciding if "will" is a name or not. Emits findings after. in the future, this could incorporate a small NER model for truly ambiguous cases, but for now will simply pass if info is too ambiguous.
 4. redactor transforms text (changes "Dr. Grace saw Hope today" into Dr. Grace saw [NAME] today" etc.)
 5. logger records what happened safely (input and output if app_env is local, otherwise only logs output)
 
-Right now, only names are implemented, so resolver isn't doing anything.
+## endpoints
 
-## Todo
-
-- [ ] POST /redact
-- [ ] GET /healthz
-- [ ] GET /readyz
-- [ ] GET /metrics
-- [ ] safe structured detection logs
-- [ ] benchmark suite
-- [ ] synthetic PHI examples
-- [ ] configurable detectors
+- `POST /redact`
+- `GET /healthz`
+- `GET /readyz`
+- `GET /metrics`
 
 ## Getting Started
 
