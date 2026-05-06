@@ -1,7 +1,5 @@
 package token
 
-import "phi-redactor/pkg/stringset"
-
 type Token struct {
 	Text     string
 	Lower    string
