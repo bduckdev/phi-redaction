@@ -8,4 +8,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 )
 
-require github.com/google/go-cmp v0.7.0 // indirect
+require (
+	github.com/cloudflare/ahocorasick v0.0.0-20240916140611-054963ec9396 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
+)
