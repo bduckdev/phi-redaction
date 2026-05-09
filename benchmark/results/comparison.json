@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-05-09T10:30:39.843639",
+  "corpus_size": 1000,
+  "systems": {
+    "phi-redactor": {
+      "overall": {
+        "tp": 2195,
+        "fp": 777,
+        "fn": 3,
+        "precision": 0.7386,
+        "recall": 0.9986,
+        "f1": 0.8491
+      },
+      "by_type": {
+        "NAME": {
+          "tp": 997,
+          "fp": 777,
+          "fn": 3,
+          "precision": 0.562,
+          "recall": 0.997,
+          "f1": 0.7188
+        },
+        "EMAIL": {
+          "tp": 449,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "SSN": {
+          "tp": 306,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 443,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        }
+      },
+      "latency_ms": {
+        "mean": 0.46,
+        "p50": 0.43,
+        "p95": 0.49
+      },
+      "throughput_per_sec": 2196.7
+    },
+    "presidio": {
+      "overall": {
+        "tp": 2080,
+        "fp": 28,
+        "fn": 118,
+        "precision": 0.9867,
+        "recall": 0.9463,
+        "f1": 0.9661
+      },
+      "by_type": {
+        "NAME": {
+          "tp": 984,
+          "fp": 0,
+          "fn": 16,
+          "precision": 1.0,
+          "recall": 0.984,
+          "f1": 0.9919
+        },
+        "EMAIL": {
+          "tp": 449,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "SSN": {
+          "tp": 306,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "PHONE": {
+          "tp": 341,
+          "fp": 28,
+          "fn": 102,
+          "precision": 0.9241,
+          "recall": 0.7698,
+          "f1": 0.8399
+        }
+      },
+      "latency_ms": {
+        "mean": 3.9,
+        "p50": 3.77,
+        "p95": 5.27
+      },
+      "throughput_per_sec": 256.4
+    }
+  }
+}
